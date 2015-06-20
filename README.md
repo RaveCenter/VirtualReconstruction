@@ -1,5 +1,4 @@
 # VirtualReconstruction
-Virtual Reconstruction of Historical Cities
 
 Welcome to the Rice University Virtual Reconstruction of Historical Cities course webpage!
 
