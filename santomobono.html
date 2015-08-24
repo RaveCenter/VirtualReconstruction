@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Virtual Reconstruction of Historical Cities - Rice University</title>
+
+	<link rel="icon" type="image/png" href="img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	<!-- Custom CSS -->
+	<link href="css/landing-page.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<script type='text/javascript' src="js/hover.zoom.js"></script>
+		<script type='text/javascript' src="js/hover.zoom.conf.js"></script>
+
+		<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+		<script type="text/javascript">
+			var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+			if (document.location.protocol == 'https:'){
+				unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+			}
+			document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+		</script>
+		<script type="text/javascript">
+			<!--
+			var config = {
+				width: 960, 
+				height: 600,
+				params: { enableDebugging:"0" }
+
+			};
+			var u = new UnityObject2(config);
+
+			jQuery(function() {
+
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+
+				u.observeProgress(function (progress) {
+					switch(progress.pluginStatus) {
+						case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+						break;
+						case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+						break;
+						case "installed":
+						$missingScreen.remove();
+						break;
+						case "first":
+						break;
+					}
+				});
+				u.initPlugin(jQuery("#unityPlayer")[0], "files/santomobono.unity3d");
+			});
+		-->
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+		<div class="container topnav">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand topnav" href="index.html">Virtual Reconstruction</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Sant'Omobono</a></li>
+					<li><a href="regia.html">Regia</a></li>
+					<li><a href="songomnara.html">Songo Mnara</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+
+
+	<!-- Header -->
+	<a name="about"></a>
+	<div class="intro-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 text-center">
+					<h1>Welcome to Sant'Omobono</h1>
+					<hr>
+					<h3>
+						The Temple of Sant'Omobono was located near the Forum Boarium in Rome. Given the site's use through multiple chronological phases, we decided to solely focus on reconstructing the first phase of the building (circa 580 BCE). The temple was the first monumental and Tuscanic temple constructed in Central Italy. Due to poor excavation strategies implemented throughout most of the site's excavation, we have hardly any physical remains of the temple itself. Throughout this process, we have extensively used scholarship and contemporaneous comparanda to create our own reconstruction.
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-a">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<h1>Interactive Model</h1>
+					<hr>
+					<h3>
+						Please enable the Unity Player and wait while the interactive model below is loading.
+					</h3>
+					Mouse/Arrow Keys: navigation
+					<br>Up/Down Button: elevation
+                    <br>"Escape" Key    : pause
+                    <br>"Space" Key  : resume 
+                    <br>Click on parts of the temple to read descriptions.
+                    <br>Click on "Close" button to close description box and resume navigation.
+					<div>
+						<div class="content">
+							<div id="unityPlayer">
+								<div class="missing">
+									<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+										<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+									</a>
+								</div>
+								<div class="broken">
+									<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+										<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+									</a>
+								</div>
+							</div>
+						</div>
+						<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
+						<!-- unity player ends here -->
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>About</h1>
+					<hr>
+					<h3 align="left"> 
+						The Sant’Omobono sanctuary is located in the city of Rome, bordered to the north by the ancient road Vicus Iugarius, and to the east by a road that led to the center of the Forum Boarium. The temples of S’Omobono were located in close proximity to the Tiber River, which was used as a major trade route for Mediterranean merchants seeking to reach clients in the interior of the Italic peninsula. Therefore, the temple served a dual purpose: first as a sacred space for people to worship the gods, and second as a meeting place for trade and the assimilation of foreign cultures, ideas, and practices.
+						<br><br>Excavations at this site began in 1934 with Colini and continue to this day. The archaeology of the first half of the twentieth century was poorly executed, thus leading to many conflicting interpretations of the archaeology and stratigraphy. 
+						<br><br>That said, scholars know the basic chronology of the site. The first phase of the temple was constructed circa 580 BCE, as the first monumental and Tuscanic temple in western central Italy. This first temple was destroyed in the second half of the sixth century BCE, and replaced with a second temple that used the same altar around 530 BCE. After the second temple burned down around 500 BCE, twin temples were constructed.
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/temple.PNG" alt="column">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Altar</h1>
+					<hr>
+					<h3 align="left"> 
+						Although there is little evidence from the physical structure of the altar, during excavations, two courses of the stone altar were discovered. The two courses of stone altar are axially aligned with the temple, as a product of its Latial location. This altar is unique because it is a sole instance of an altar placed on the external axis of a religious cult building. The height of the altar is hypothesized based on standard contemporary altar heights, as there are no other altars from other temple comparanda that exist today.
+						<br>Darling, 2004
+						<br>Hopkins, 2010
+						<br>Potts, 2011
+						<br>Thomson De Grummond, 2006
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/altar.PNG" alt="column">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Foundation</h1>
+					<hr>
+					<h3 align="left"> 
+						The ancient builders of this temple created a single course of foundation and added five courses of stone to create a podium above it. Although not much is known in regards to the materials used in its construction, based on phase two of the temple, the foundation was most likely a single course of undressed stone.
+						<br>Gjerstad, 1969
+						<br>Hopkins, 2010
+						<br>Potts, 2011
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/stairs.PNG" alt="acro">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Stairs</h1>
+					<hr>
+					<h3 align="left"> 
+						During excavations, the two lowest courses of the temple’s front staircase were uncovered. The first step is placed on a beaten-earth floor that corresponds with the elevation of the first course of the podium, and according to excavators, each of the stairs had a width of approximately 2.3 meters. Based on the height of each of the two steps found in comparison to the overall height of the podium, it can be extrapolated that there were seven steps creating the staircase, each 1.65 meters tall and 1.65 meters deep. This staircase reinforced the frontality of the temple, as people could only enter the temple by using these particular stairs.
+						<br>Hopkins, 2010
+						<br>Winter, Symbols of Wealth and Power, 2009
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/stairs.PNG" alt="acro">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Podium</h1>
+					<hr>
+					<h3 align="left"> 
+						We have remnants of the podium. The podium consisted of five courses of ashlar tufa masonry, that utilized lionatto tuff. The temple had a vertical fascia and torus moulding composed of a simple half round moulding just underneath the fifth course of the stone. The total height of the podium was 1.6 meters and the moulding height was approximately 30 centimeters.
+						<br>Hopkins, 2010
+						<br>Potts, 2011
+						<br>Winter, Symbols of Wealth and Power, 2009
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/podium.PNG" alt="acro">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Exterior Walls</h1>
+					<hr>
+					<h3 align="left"> 
+						Remnants of the wall do not exist, aside from a wall socle at the northwest corner of the site. Given the mass of muddy clay and the roof terracottas, by looking at comparative scholarship it can be reasoned that above the stone socle, attached to the podium, the walls were built in mud brick. Given the imprint in the profile from the columns found on the site, it is hypothesized that the walls were approximately 4.7 meters tall, to match the height of the columns. Since the first and second phases of the temples seem to have corresponding cellas, scholars assert that the alae walls also correspond between the two structures. Therefore, the first temple’s alae walls would have terminated in antae at the front of the podium
+						<br>Andersen, 1998
+						<br>Holloway, 1994
+						<br>Hopkins, 2010
+						<br>Winter, Symbols of Wealth and Power, 2009
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/podium.PNG" alt="acro">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Cella Walls</h1>
+					<hr>
+					<h3 align="left"> 
+						Remnants of the cella wall at the rear of the temple exist. There is a clean break between the medial cella and the lateral alae walls. As affirmed by the archaeology, the cella walls are parallel to the western podium wall and 1.9 m east of it. Since evidence for the cella walls have only been found at the rear of the temple, it is unclear how far they extended. Looking at scholarship on the subject, we came to the conclusion that the cella walls extended approximately half the distance of the exterior walls.
+						<br>Andersen, 1998
+						<br>Holloway, 1994
+						<br>Hopkins, 2010
+						<br>Winter, Symbols of Wealth and Power, 2009
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/wall.PNG" alt="acro">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Columns</h1>
+					<hr>
+					<h3 align="left"> 
+						Although the temple did not structurally need columns to support the roof, the architects most likely utilized two Tuscan columns in the front of the temple in antis as a decorative element. We came to this conclusion by looking at contemporaneous comparanda, such as the temples of Athena at Paestum and Artemis at Corfu, both of which also had columns in antis. During the excavations in 1938, archaeologists uncovered part of a terracotta column capital and a column casing, both from two separate columns. It seems most likely that the terracotta column casing is from the first phase of the temple as part of a Tuscan-style column, and the column capital is from the second phase of the temple as part of a Doric-style column, particularly because it appears that the decoration on the columns evolved as the temple decoration evolved in the expansion of the second temple. The columns most likely were of a Tuscan style and consisted of a wooden column encased in terracotta, approximately 4.7 meters in height, as extrapolated by the profile imprint.
+        				<br><br>
+				        <br>Andersen, 1998
+				        <br>Holloway, 1994
+				        <br>Hopkins, 2010
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/column.PNG" alt="column">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Pedimental Group</h1>
+					<hr>
+					<h3 align="left"> 
+						Fragments of the terracotta design elements were found, allowing us to piece together an overall image of the structure. The felines flanking a gorgon is a typical motif. The Temple of Artemis at Corfu has a similar pedimental group. By using contemporaneous comparanda we have determined what the pedimental group would have looked like.  There are certain elements (such as cavettos, scales, and colors) that are missing, which we hope to able to put in soon.
+						<br>Winter, Symbols of Wealth, 2009.
+						<br>Hopkins, 2010.
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/roof.PNG" alt="altar">
+					<img class="img-responsive" src="img/temple/pedimentgroup.PNG" alt="pediment1">
+					<img class="img-responsive" src="img/temple/pediment2.PNG" alt="pediment2">
+					<img class="img-responsive" src="img/temple/pedimentcaption.PNG" alt="pediment3">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Sima Revetments</h1>
+					<hr>
+					<h3 align="left"> 
+						Only a small fragment of the lion pattern remains. It seems probable from the placement of the tail and the tip of foliage connected to the lion’s nose that the design was the repetition of two lions facing a lotus.
+						<br>Winter, Symbols of Wealth, 2009.
+						<br>Hopkins, 2010.
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/sima.PNG" alt="sima">
+					<img class="img-responsive" src="img/temple/sima2.PNG" alt="sima2">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Acroterion</h1>
+					<hr>
+					<h3 align="left"> 
+						There is a bull acroterion on the top of the roof that we were unable to build due to time constraints. We have a basic recreation of what it should look like; it stands on a ridge tile.
+						<br>Winter, The Evolution of Bases for Acroteria in Etruria and Latium (640/630-510 B.C.), 2009.
+						<br>Winter, New light on the production of decorated roofs of the 6th c. B.C. at sites in and around Rome,2009.
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/acro.PNG" alt="acro">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Wooden Framework</h1>
+					<hr>
+					<h3 align="left"> 
+						There were two widely used ceiling systems at the time: the truss and the prop-and-lintel. The truss needs no interior colonnades and spans wide areas without support from below. Sant’Omobono is a simple temple with no colonnades; it follows that that the framework and ceiling should reflect this simplicity in design as well. There is also no evidence for an attic, so therefore we have made the framework entirely visible.
+						<br>Hodge, The Woodwork of Greek Roofs, 1960.
+					</h3>
+				</div>
+				<div class="col-lg-6 col-sm-12 text-center">
+					<img class="img-responsive" src="img/temple/acro.PNG" alt="acro">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-b">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 text-center">
+					<h1>Back Facade</h1>
+					<hr>
+					<h3 align="left"> 
+						No remains of the back facade were recorded, so we have left the decoration out.
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-section-a">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<h1>Bibliography</h1>
+					<hr>
+					<h3 align="left"> 
+						Andersen, H. Damgaard. "Etruscan Architecture from the Late Orientalizing to the Archaic Period (c. 640-480 B.C.). V vols." <i>Institute of Archaeology and Ethnology.</i> Copenhagen: University of Copenhagen, 1998. Print.
+						<br><br>
+						Darling, Janina K. <i>Reference Guides to National Architecture: Architecture of Greece.</i> Westport: Greenwood Press, 2004. Print.
+						<br><br>
+						de Grummond, N. T and I. Eldund-Berry, eds. <i>The Archaeology of Sanctuaries and Ritual in Etruria.</i> Dexter: Thomson-Shore, 2011. Print.
+						<br><br>
+						Edlund-Berry, Ingrid. “The Language of Etrusco-Italic Architecture: New Perspectives on Tuscan Temples.” <i>American Journal of Archaeology.</i> 112.3 (2008): 441-447. Web. 25 January 2014.
+						<br><br>
+						Gjerstad, Einar.<i> Early Rome. </i>Lund: C.W.K. Gleerup, 1969. Print.
+						<br><br>
+						Holloway, R. R. <i>The Archaeology of Early Rome and Latium.</i> London: Routledge, 1994. Print.
+						<br><br>
+						Hopkins, J. N.<i> The Topographical Transformation of Archaic Rome: A New Interpretation of Architecture and Landscape in the Early City.</i>  Austin: Doctoral Thesis University of Texas at Austin, 2010. Print.
+						<br><br>
+						Potts, Charlotte R. <i>Accommodating the Divine: The Form and Function of Religious Buildings in Latial and Etruscan Settlements c. 900-500 B.C. </i>Oxford: Doctoral Thesis University of Oxford, 2011. Print.
+						<br><br>
+						Thomson De Grummond, Nancy and Erika Simon, eds. <i>The Religion of the Etruscans. </i>Austin: University of Texas at Austin, 2006. Print.
+						<br><br>
+						Winter, Nancy A. “The Evolution of Bases for Acroteria in Etruria and Latium (640/630- 510 B.C.)”. <i>Deliciae Fictiles IV: Architectural Terracottas in Ancient Italy Images of Gods, Monsters and Heroes.</i> Eds. Patricia Lulof and Carlo Rescigno. Oxford: Oxbow Books, 2009. 62-68. Print.
+						<br><br>
+						Winter, Nancy A. “New light on the production of decorated roofs of the 6th c. B.C. at sites in and around Rome.” <i>Journal of Roman Archaeology</i> 22 (2009): 6-28. Web.
+						<br><br>
+						Winter, Nancy A. "The Origin of the Recessed Gable in Etruscan Architecture." <i>Deliciae Fictiles III: Architectural Terracottas in ancient Italy: New Discoveries and Interpretations.</i> Eds. I. E. M. Edlund-Berry, G. Greco and J. Kenfield. Rome: Oxbow Books, 2006. 45-49. Print.
+						<br><br>
+						Winter, Nancy A.<i> Symbols of Wealth and Power: Architectural Terracotta Decoration in Etruria and Central Italy, 640-510 B.C.</i> Ann Arbor: University of Michigan Press, 2009. Print.
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<p class="copyright text-muted small">Copyright &copy; Rice University 2014</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
