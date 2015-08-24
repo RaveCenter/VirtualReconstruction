@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Virtual Reconstruction of Historical Cities - Rice University</title>
+
+	<link rel="icon" type="image/png" href="img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	<!-- Custom CSS -->
+	<link href="css/landing-page.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="assets/js/hover.zoom.js"></script>
+        <script src="assets/js/hover.zoom.conf.js"></script>
+
+        <script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+        <script type="text/javascript">
+            <!--
+            var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+            if (document.location.protocol == 'https:')
+                unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+            document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+        -->
+    </script>
+    <script type="text/javascript">
+        <!--
+        var config = {
+            width: 960, 
+            height: 600,
+            params: { enableDebugging:"0" }
+
+        };
+        var u = new UnityObject2(config);
+
+        jQuery(function() {
+
+            var $missingScreen = jQuery("#unityPlayer").find(".missing");
+            var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+            $missingScreen.hide();
+            $brokenScreen.hide();
+
+            u.observeProgress(function (progress) {
+                switch(progress.pluginStatus) {
+                    case "broken":
+                    $brokenScreen.find("a").click(function (e) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        u.installPlugin();
+                        return false;
+                    });
+                    $brokenScreen.show();
+                    break;
+                    case "missing":
+                    $missingScreen.find("a").click(function (e) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        u.installPlugin();
+                        return false;
+                    });
+                    $missingScreen.show();
+                    break;
+                    case "installed":
+                    $missingScreen.remove();
+                    break;
+                    case "first":
+                    break;
+                }
+            });
+u.initPlugin(jQuery("#unityPlayer")[0], "files/songomnara.unity3d");
+});
+-->
+</script>
+
+</head>
+
+<body>
+
+   <!-- Navigation -->
+   <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+      <div class="container topnav">
+         <!-- Brand and toggle get grouped for better mobile display -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand topnav" href="index.html">Virtual Reconstruction</a>
+       </div>
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+           <li><a href="./santomobono/">Sant'Omobono</a></li>
+           <li><a href="./regia/">Regia</a></li>
+           <li><a href="#">Songo Mnara</a></li>
+       </ul>
+   </div>
+   <!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
+
+
+<!-- Header -->
+<a name="about"></a>
+<div class="intro-header">
+  <div class="container">
+     <div class="row">
+        <div class="col-lg-12">
+            <h1> Interactive Model </h1>
+            <h3>Please enable the Unity Player and wait while the interactive model below is loading. </h3>
+            <div>
+                <div class="content">
+                    <div id="unityPlayer">
+                        <div class="missing">
+                            <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+                                <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+                            </a>
+                        </div>
+                        <div class="broken">
+                            <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+                                <img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
+                <!-- unity player ends here -->
+            </div> 
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="content-section-a">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+     <hr class="section-heading-spacer">
+     <div class="clearfix"></div>
+     <h2 class="section-heading"><a href="http://news.rice.edu/2014/04/28/walks-with-the-ancients/">Rice News</a></h2>
+     <p class="lead">Check out the Rice News article about the Virtual Reconstruction project!</p>
+ </div>
+ <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+     <a href="http://news.rice.edu/2014/04/28/walks-with-the-ancients/">
+      <img class="img-responsive" src="img/ricelogo.png" alt="">
+  </a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="content-section-b">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-5 col-sm-6">
+     <hr class="section-heading-spacer">
+     <div class="clearfix"></div>
+     <h2 class="section-heading"><a href="./santomobono/">Sant'Omobono</a></h2>
+     <p class="lead">Explore the temple of Sant'Omobono, located near the Forum Boarium in Rome.</p>
+ </div>
+ <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+     <a href="./santomobono/">
+      <img class="img-responsive" src="img/santomobono.jpg" alt="">
+  </a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="content-section-a">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+     <hr class="section-heading-spacer">
+     <div class="clearfix"></div>
+     <h2 class="section-heading"><a href="./regia/">Regia</a></h2>
+     <p class="lead">Enter the Regia, a small building on the Via Sacra across the street from the Temple of Vesta in the Roman Forum.</p>
+ </div>
+ <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+     <a href="./regia/">
+      <img class="img-responsive" src="img/regia.jpg" alt="">
+  </a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="content-section-b">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-5 col-sm-6">
+     <hr class="section-heading-spacer">
+     <div class="clearfix"></div>
+     <h2 class="section-heading"><a href="./songomnara/">Songo Mnara</a></h2>
+     <p class="lead">Experience Songo Mnara, a late fourteenth to early sixteenth century AD Swahili stonetown site, located in the Kilwa archipelago of southern Tanzania.</p>
+ </div>
+ <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+     <a href="./songomnara/">
+      <img class="img-responsive" src="img/songomnara.jpg" alt="">
+  </a>
+</div>
+</div>
+</div>
+</div>
+
+<a id="about"></a>
+<div class="content-section-a">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-12 col-sm-12">
+     <hr class="section-heading-spacer">
+     <div class="clearfix"></div>
+     <h2 class="section-heading">About</h2>
+     <p class="lead">
+      This site is a product of collaboration between students and faculty in the Rice University Schools of Humanities, Social Sciences, Architecture, and Engineering. Under the supervision of professors, but working in independent study, student teams researched the archaeology of these sites as well as contemporaneous architecture. They then modeled each building using Rhino3D and Blender before integrating the buildings with the Unity Game Engine.<br><br>
+      <br>Students:<br>Grace Apfeld, Elizabeth Binswanger, Allison Clark, Ujalashah Dhanani, Joyce Jones, Cynthia Guo, <a href="https://www.linkedin.com/in/gregkamback">Gregory Kamback</a>, Thanasis Kouris, <a href="https://www.linkedin.com/pub/abdelrahman-nimeri/71/280/234">Abdelrahman Nimeri</a>, <a href="https://www.linkedin.com/pub/aryn-neurock/53/631/32a">Aryn Neurock</a>, <a href="http://mshamim.com/">Muhammad Saad Shamim</a>, <a href="https://www.linkedin.com/pub/yidan-wang/4b/229/8a7">Yidan Wang</a>, <a href="https://www.linkedin.com/in/willwang6">Will Wang</a>, Connie Wang, Joanna Weedun<br>
+      <br>Professors:<br><a href="https://rice.academia.edu/JeffreyFleisher">Jeffrey Fleisher</a> (Anthropology) and <a href="http://arthistory.rice.edu/hopkins.aspx">John Hopkins</a> (Art History)<br>
+      <br>*All content and images are copyright protected and are not to be used without permission. The products on this site are the fruit of student research.
+  </p>
+</div>
+</div>
+</div>
+</div>
+
+<footer>
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-12 text-center">
+     <p class="copyright text-muted small">Copyright &copy; Rice University 2014</p>
+ </div>
+</div>
+</div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
